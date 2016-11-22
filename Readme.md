@@ -11,9 +11,7 @@
 
 ###after virutalenv is installed
 `
-flask/bin/pip install flask
-flask/bin/pip install flask-sqlalchemy
-flask/bin/pip install sqlalchemy-migrate
+flask/bin/pip install flask flask-sqlalchemy sqlalchemy-migrate
 `
 
 #Tutorial
