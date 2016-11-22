@@ -1,3 +1,21 @@
+#Install
+
+####Mac
+`sudo easy_install virtualenv`
+
+###Linux
+`sudo apt-get install python-virtualenv`
+
+###Windows 
+`lol`
+
+###after virutalenv is installed
+`
+flask/bin/pip install flask
+flask/bin/pip install flask-sqlalchemy
+flask/bin/pip install sqlalchemy-migrate
+`
+
 #Tutorial
 
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
