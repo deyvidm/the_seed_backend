@@ -10,11 +10,11 @@
 `pip install virutalenv`
 
 ###after virutalenv is installed
-`
+```
 virutalenv flask
 
 flask/bin/pip install flask flask-sqlalchemy sqlalchemy-migrate simplejson
-`
+```
 
 #Tutorial
 
