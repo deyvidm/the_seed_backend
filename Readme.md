@@ -1,6 +1,6 @@
 #Install
 
-####Mac
+###Mac
 `sudo easy_install virtualenv`
 
 ###Linux
