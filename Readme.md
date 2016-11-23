@@ -41,7 +41,7 @@ Please be sure to update the Readme and tests!
 	The password is hashed before being stored in the DB. Once it is hashed, we discard the original plain string password. <br>
 
 	Example: <br>
-	curl -i -X POST -H "Content-Type: application/json" -d '{"username":"mark","password":"ilovemark"}' http://127.0.0.1:5000/api/users
+	$ curl -i -X POST -H "Content-Type: application/json" -d '{"username":"mark","password":"ilovemark"}' http://127.0.0.1:5000/api/users
 	
 	HTTP/1.0 201 CREATED <br>
 	Content-Type: application/json <br>
@@ -51,7 +51,7 @@ Please be sure to update the Readme and tests!
 	Date: Wed, 23 Nov 2016 20:27:55 GMT <br>
 
 	{ <br>
-  		"username": "mark" <br>
+  	    "username": "mark" <br>
 	}
 
 - GET **/api/users/&lt;int:id&gt;**
@@ -69,7 +69,8 @@ Please be sure to update the Readme and tests!
 	On failure a status code 401 (unauthorized) is returned. <br>
 
 	Example: <br>
-	curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/token <br>
+	$ curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/token <br>
+	
 	HTTP/1.0 200 OK <br>
 	Content-Type: application/json <br>
 	Content-Length: 160 <br>
@@ -77,8 +78,8 @@ Please be sure to update the Readme and tests!
 	Date: Wed, 23 Nov 2016 20:49:33 GMT <br>
 
 	{ <br>
-  		"duration": 600, <br>
-  		"token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ3OTkzNDc3MywiaWF0IjoxNDc5OTM0MTczfQ.eyJpZCI6MX0.GmrfOOPkXgY5q0V6ykTONa-UPPBF8g4LDSMnfFI4ub8" <br>
+  	    "duration": 600, <br>
+  	    "token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ3OTkzNDc3MywiaWF0IjoxNDc5OTM0MTczfQ.eyJpZCI6MX0.GmrfOOPkXgY5q0V6ykTONa-UPPBF8g4LDSMnfFI4ub8" <br>
 	}
 
 	**This returns a token that can be used in place of sending `username` and `password` with each request** <br>
@@ -91,7 +92,7 @@ Please be sure to update the Readme and tests!
 	On failure, status code 401 (unauthorized) is returned. <br>
 
 	Example: <br>
-	curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
+	$ curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
 
 	**This is valid because `username` and `password` match** <br>
 	HTTP/1.0 200 OK <br>
@@ -101,10 +102,10 @@ Please be sure to update the Readme and tests!
 	Date: Wed, 23 Nov 2016 20:47:52 GMT <br>
 
 	{ <br>
-  		"data": "Hello, mark!" <br>
+  	    "data": "Hello, mark!" <br>
 	}
 
-	curl -u mark:idontlovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
+	$ curl -u mark:idontlovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
 
 	**This is not valid because you don't lovemark anymore **<br>
 
