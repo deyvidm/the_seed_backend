@@ -7,10 +7,12 @@
 `sudo apt-get install python-virtualenv`
 
 ###Windows 
-`lol`
+`pip install virutalenv`
 
 ###after virutalenv is installed
 `
+virutalenv flask
+
 flask/bin/pip install flask flask-sqlalchemy sqlalchemy-migrate simplejson
 `
 
