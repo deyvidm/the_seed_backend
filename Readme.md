@@ -11,7 +11,7 @@
 
 ###after virutalenv is installed
 `
-flask/bin/pip install flask flask-sqlalchemy sqlalchemy-migrate
+flask/bin/pip install flask flask-sqlalchemy sqlalchemy-migrate simplejson
 `
 
 #Tutorial
