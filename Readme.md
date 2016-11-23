@@ -13,7 +13,7 @@
 ```
 virutalenv flask
 
-flask/bin/pip install flask flask-sqlalchemy sqlalchemy-migrate simplejson
+flask/bin/pip install -r dependencies.txt
 ```
 
 #Tutorial
