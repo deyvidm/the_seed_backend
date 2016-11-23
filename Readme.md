@@ -41,4 +41,7 @@ It is empty as of now, hopefully that will change :)
 This directory is used by SQLAlchemy to keep backups and perform DB migrations.
 We should not be writing any code that goes in there. 
 
+###Database
 
+`./db_create.py` to create a database
+`./populate.py` to populate the database
