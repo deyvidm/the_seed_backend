@@ -36,22 +36,22 @@ Please be sure to update the Readme and tests!
 - POST **/api/users**
 
 	Register a new user. <br>
-	The body contains a JSON object that defines a `username` and `password`<br>
-	On success, a status code 201 is returned. The body of the response contains a JSON object with the newly added user <br>
-	The password is hashed before being stored in the DB. Once it is hashed, we discard the original plain string password <br>
+	The body contains a JSON object that defines a `username` and `password`.<br>
+	On success, a status code 201 is returned. The body of the response contains a JSON object with the newly added user. <br>
+	The password is hashed before being stored in the DB. Once it is hashed, we discard the original plain string password. <br>
 
-	Example:
+	Example: <br>
 	curl -i -X POST -H "Content-Type: application/json" -d '{"username":"mark","password":"ilovemark"}' http://127.0.0.1:5000/api/users
 	
-	HTTP/1.0 201 CREATED
-	Content-Type: application/json
-	Location: http://127.0.0.1:5000/api/users/1
-	Content-Length: 25
-	Server: Werkzeug/0.11.11 Python/2.7.10
-	Date: Wed, 23 Nov 2016 20:27:55 GMT
+	HTTP/1.0 201 CREATED <br>
+	Content-Type: application/json <br>
+	Location: http://127.0.0.1:5000/api/users/1 <br>
+	Content-Length: 25 <br>
+	Server: Werkzeug/0.11.11 Python/2.7.10 <br>
+	Date: Wed, 23 Nov 2016 20:27:55 GMT <br>
 
-	{
-  		"username": "mark"
+	{ <br>
+  		"username": "mark" <br>
 	}
 
 - GET **/api/users/&lt;int:id&gt;**
@@ -66,54 +66,54 @@ Please be sure to update the Readme and tests!
 	Useful for not having to pass `username` and `password` with every request. <br>
 	On success a JSON object is returned with a field `token` set to authentication token for the user and a field `duration` set to 
 	how long the token is valid for. <br>
-	On failure a status code 401 (unauthorized) is returned.
+	On failure a status code 401 (unauthorized) is returned. <br>
 
-	Example:
-	curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/token
-	HTTP/1.0 200 OK
-	Content-Type: application/json
-	Content-Length: 160
-	Server: Werkzeug/0.11.11 Python/2.7.10
-	Date: Wed, 23 Nov 2016 20:49:33 GMT
+	Example: <br>
+	curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/token <br>
+	HTTP/1.0 200 OK <br>
+	Content-Type: application/json <br>
+	Content-Length: 160 <br>
+	Server: Werkzeug/0.11.11 Python/2.7.10 <br>
+	Date: Wed, 23 Nov 2016 20:49:33 GMT <br>
 
-	{
-  		"duration": 600, 
-  		"token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ3OTkzNDc3MywiaWF0IjoxNDc5OTM0MTczfQ.eyJpZCI6MX0.GmrfOOPkXgY5q0V6ykTONa-UPPBF8g4LDSMnfFI4ub8"
+	{ <br>
+  		"duration": 600, <br>
+  		"token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ3OTkzNDc3MywiaWF0IjoxNDc5OTM0MTczfQ.eyJpZCI6MX0.GmrfOOPkXgY5q0V6ykTONa-UPPBF8g4LDSMnfFI4ub8" <br>
 	}
 
-	** This returns a token that can be used in place of sending `username` and `password` with each request **
+	**This returns a token that can be used in place of sending `username` and `password` with each request** <br>
 
 - GET **/api/resource**
 
 	Return a protected resource.<br>
 	Authentication token is also checked here which is pretty dope. <br>
 	On success a JSON object with data for authenticated user returned. <br>
-	On failure, status code 401 (unauthorized) is returned.
+	On failure, status code 401 (unauthorized) is returned. <br>
 
-	Example:
-	curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/resource
+	Example: <br>
+	curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
 
-	** This is valid because `username` and `password` match ** 
-	HTTP/1.0 200 OK
-	Content-Type: application/json
-	Content-Length: 29
-	Server: Werkzeug/0.11.11 Python/2.7.10
-	Date: Wed, 23 Nov 2016 20:47:52 GMT
+	**This is valid because `username` and `password` match** <br>
+	HTTP/1.0 200 OK <br>
+	Content-Type: application/json <br>
+	Content-Length: 29 <br>
+	Server: Werkzeug/0.11.11 Python/2.7.10 <br>
+	Date: Wed, 23 Nov 2016 20:47:52 GMT <br>
 
-	{
-  		"data": "Hello, mark!"
+	{ <br>
+  		"data": "Hello, mark!" <br>
 	}
 
-	curl -u mark:idontlovemark -i -X GET http://127.0.0.1:5000/api/resource
+	curl -u mark:idontlovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
 
-	** This is not valid because you don't lovemark anymore **
+	**This is not valid because you don't lovemark anymore **<br>
 
-	HTTP/1.0 401 UNAUTHORIZED
-	Content-Type: text/html; charset=utf-8
-	Content-Length: 19
-	WWW-Authenticate: Basic realm="Authentication Required"
-	Server: Werkzeug/0.11.11 Python/2.7.10
-	Date: Wed, 23 Nov 2016 20:48:36 GMT
+	HTTP/1.0 401 UNAUTHORIZED <br>
+	Content-Type: text/html; charset=utf-8 <br>
+	Content-Length: 19 <br>
+	WWW-Authenticate: Basic realm="Authentication Required" <br>
+	Server: Werkzeug/0.11.11 Python/2.7.10 <br>
+	Date: Wed, 23 Nov 2016 20:48:36 GMT <br>
 
 	Unauthorized Access
 
