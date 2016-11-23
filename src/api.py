@@ -37,3 +37,44 @@ def product(product_id):
         return jsonify(entries)
     
     return '', 204
+
+def scraperToDB(scraper_JSON):
+	obj = json.loads(scraper_JSON)
+	foundProd = list()
+
+	#find products in JSON
+	for loc in obj:
+		for prod in obj[loc]:
+			if (prod not in foundProd):
+				foundProd.append(prod)
+
+	#new JSON builder
+	jStr = "{"
+	multiple = False #for multiple locations under one product
+	t = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+	for p in foundProd:
+		if (jStr <> "{"):#add ','
+			jStr += ','
+		multiple = False
+		jStr += '"' + p + '": [['
+		for l in obj:
+			if (p in obj[l]): #add it to the JSON
+				if (multiple):
+					jStr += ","
+				pID = models.Product.query.filter_by(name=p).first()
+				lID = models.Location.query.filter_by(name=l).first()
+				jStr += '{'
+				jStr += '"date": "' + t + '",'
+				jStr += '"food_id": ' +  str(pID)  + ','
+				jStr += '"food_name": "' + p + '",'
+				jStr += '"location_id": ' + str(lID) + ','
+				jStr += '"location_name": "' + l + '",'
+				jStr += '"price": ' + str(obj[l][p])
+				jStr += '}'
+				multiple = True
+		jStr += ']]'
+
+	jStr += '}'
+	return jStr
+
+
