@@ -51,7 +51,7 @@ Please be sure to update the Readme and tests!
 	Date: Wed, 23 Nov 2016 20:27:55 GMT <br>
 
 	{ <br>
-        "username": "mark" <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;"username": "mark" <br>
 	}
 
 - GET **/api/users/&lt;int:id&gt;**
@@ -78,8 +78,8 @@ Please be sure to update the Readme and tests!
 	Date: Wed, 23 Nov 2016 20:49:33 GMT <br>
 
 	{ <br>
-        "duration": 600, <br>
-        "token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ3OTkzNDc3MywiaWF0IjoxNDc5OTM0MTczfQ.eyJpZCI6MX0.GmrfOOPkXgY5q0V6ykTONa-UPPBF8g4LDSMnfFI4ub8" <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;"duration": 600, <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;"token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ3OTkzNDc3MywiaWF0IjoxNDc5OTM0MTczfQ.eyJpZCI6MX0.GmrfOOPkXgY5q0V6ykTONa-UPPBF8g4LDSMnfFI4ub8" <br>
 	}
 
 	**This returns a token that can be used in place of sending `username` and `password` with each request** <br>
@@ -102,7 +102,7 @@ Please be sure to update the Readme and tests!
 	Date: Wed, 23 Nov 2016 20:47:52 GMT <br>
 
 	{ <br>
-        "data": "Hello, mark!" <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;"data": "Hello, mark!" <br>
 	}
 
 	$ curl -u mark:idontlovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
