@@ -41,7 +41,7 @@ Please be sure to update the Readme and tests!
 	The password is hashed before being stored in the DB. Once it is hashed, we discard the original plain string password. <br>
 
 	Example: <br>
-	$ curl -i -X POST -H "Content-Type: application/json" -d '{"username":"mark","password":"ilovemark"}' http://127.0.0.1:5000/api/users
+	```$ curl -i -X POST -H "Content-Type: application/json" -d '{"username":"mark","password":"ilovemark"}' http://127.0.0.1:5000/api/users```
 	
 	HTTP/1.0 201 CREATED <br>
 	Content-Type: application/json <br>
@@ -69,7 +69,7 @@ Please be sure to update the Readme and tests!
 	On failure a status code 401 (unauthorized) is returned. <br>
 
 	Example: <br>
-	$ curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/token <br>
+	```$ curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/token``` <br>
 	
 	HTTP/1.0 200 OK <br>
 	Content-Type: application/json <br>
@@ -92,7 +92,7 @@ Please be sure to update the Readme and tests!
 	On failure, status code 401 (unauthorized) is returned. <br>
 
 	Example: <br>
-	$ curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
+	```$ curl -u mark:ilovemark -i -X GET http://127.0.0.1:5000/api/resource``` <br>
 
 	**This is valid because `username` and `password` match** <br>
 	HTTP/1.0 200 OK <br>
@@ -105,7 +105,7 @@ Please be sure to update the Readme and tests!
     &nbsp;&nbsp;&nbsp;&nbsp;"data": "Hello, mark!" <br>
 	}
 
-	$ curl -u mark:idontlovemark -i -X GET http://127.0.0.1:5000/api/resource <br>
+	```$ curl -u mark:idontlovemark -i -X GET http://127.0.0.1:5000/api/resource``` <br>
 
 	**This is not valid because you don't lovemark anymore** <br>
 
