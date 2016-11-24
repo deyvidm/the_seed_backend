@@ -7,6 +7,9 @@ from flask_cors import cross_origin
 # extensions
 auth = HTTPBasicAuth()
 
+def balls():
+    return "balls"
+
 def getProductEntries(product): 
     entry_list = []
     if product:
