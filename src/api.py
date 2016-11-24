@@ -1,8 +1,8 @@
 from src import app, db
 from flask import jsonify, abort, make_response, g, request, url_for
 import models, datetime
-from flask.ext.httpauth import HTTPBasicAuth
-from flask.ext.sqlalchemy import SQLAlchemy
+from flask_httpauth import HTTPBasicAuth
+from flask_sqlalchemy import SQLAlchemy
 
 # extensions
 auth = HTTPBasicAuth()
