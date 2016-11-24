@@ -131,4 +131,4 @@ We should not be writing any code that goes in there.
 ###Database
 
 `./db_create.py` to create a database
-`./populate.py` to populate the database
+`./fromScraper.py scraped.json` to populate the database
