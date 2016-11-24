@@ -122,17 +122,17 @@ Please be sure to update the Readme and tests!
 
 	Testing is being completed through Postman. Postman is super cool and allows for clean testing of API endpoints.
 
-	All tests live in the tests/ folder. Inside there is a file called ```API.postman_collection.json```
+	All tests live in the tests/ folder. Inside there is a file called `API.postman_collection.json`
 
 	Postman can be downloaded from: **https://www.getpostman.com**
 
 	Once downloaded:
 
-	1. Click ```import``` on the top left corner of the application.
-	2. Import the ```API.postman_collection.json``` file.
+	1. Click `import` on the top left corner of the application.
+	2. Import the `API.postman_collection.json` file.
 	3. Once imported, click on the 'Collections' option in the top left and **API** should be visible as a collection.
-	4. Click the arrow to the right of the collection and a blue button named ```Run``` becomes visible.
-	5. Click on ```Run``` and all of the tests in the suite will be run and output how many tests are passed.
+	4. Click the arrow to the right of the collection and a blue button named `Run` becomes visible.
+	5. Click on `Run` and all of the tests in the suite will be run and output how many tests are passed.
 
 	Shortcomings:
 
