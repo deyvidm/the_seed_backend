@@ -3,7 +3,7 @@ from flask import jsonify, abort, make_response, g, request, url_for
 import models, datetime
 from flask_httpauth import HTTPBasicAuth
 from flask_sqlalchemy import SQLAlchemy
-
+from flask_cors import cross_origin
 # extensions
 auth = HTTPBasicAuth()
 
@@ -18,6 +18,7 @@ def getProductEntries(product):
     return entry_list
 
 @app.route("/api/product")
+@cross_origin()
 def all_products():
     product_info = {} #setup the return object
     products = models.Product.query.all() #get all products
@@ -35,6 +36,7 @@ def all_products():
     return jsonify(product_info)
 
 @app.route("/api/product/<product_id>")
+@cross_origin()
 def product(product_id): 
     product = models.Product.query.filter_by(id=product_id).first()
     entries = getProductEntries(product)
@@ -56,6 +58,7 @@ def verify_password(username_or_token, password):
     return True
 
 @app.route('/api/users', methods=['POST'])
+@cross_origin()
 def new_user():
 	username = request.json.get('username')
 	password = request.json.get('password')
@@ -72,6 +75,7 @@ def new_user():
 
 
 @app.route('/api/users/<int:id>')
+@cross_origin()
 def get_user(id):
 	user = models.User.query.get(id)
 	if not user:
@@ -79,12 +83,14 @@ def get_user(id):
 	return jsonify({'username': user.username})
 
 @app.route('/api/token')
+@cross_origin()
 @auth.login_required
 def get_auth_token():
 	token = g.user.generate_auth_token(600)
 	return jsonify({'token': token.decode('ascii'), 'duration': 600})
 
 @app.route('/api/resource')
+@cross_origin()
 @auth.login_required
 def get_resource():
 	return jsonify({'data': 'Hello, %s!' % g.user.username})
