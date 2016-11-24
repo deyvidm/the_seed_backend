@@ -34,12 +34,40 @@ need to create new files. <br>
 Please be sure to update the Readme and tests! <br>
 
 - GET **/api/product**
-	Will receive a JSON string of all the results from the scraper from all time. 
-	Structure will be as follows:
+
+	Will receive a JSON string of all the results from the scraper from all time. <br>
+	Returns 500 on Failure. <br>
+	Returns 200 on Sucess and the following body: <br> 
 	
 	```
 	{
 		"product_name": [
+		    {
+		      "date": "date and time scraped", 
+		      "food_id": product_id, 
+		      "food_name": "product_name", 
+		      "location_id": store_id, 
+		      "location_name": "name of store", 
+		      "price": price
+		    }, 
+		    {
+		      "date": "date and time scraped", 
+		      "food_id": product_id, 
+		      "food_name": "product_name", 
+		      "location_id": store_id, 
+		      "location_name": "name of store", 
+		      "price": price
+		    }, 
+		    {
+		      "date": "date and time scraped", 
+		      "food_id": product_id, 
+		      "food_name": "product_name", 
+		      "location_id": store_id, 
+		      "location_name": "name of store", 
+		      "price": price
+		    }
+		  ],
+		"different_product_name": [
 		    {
 		      "date": "date and time scraped", 
 		      "food_id": product_id, 
@@ -53,9 +81,10 @@ Please be sure to update the Readme and tests! <br>
 	```
 
 - GET **/api/product/product_id**
-	Will receive a JSON string of all the entries for a product with id product_id from all time.
-	Structure will be as follows:
-	
+
+	Will receive a JSON string of all the entries for a product with id product_id from all time. <br>
+	Returns 204 on Failure. <br>
+	Return 200 on Success and the following body: <br>
 	```
 	{
 		[
@@ -70,6 +99,13 @@ Please be sure to update the Readme and tests! <br>
 		  ]
 	}
 	```
+
+- POST **/api/scrape**
+
+	Manually activate the scraper and fetch new data. <br> 
+	User must be logged in to succeed. 
+	Returns 500 on Failure. <br> 
+	Returns 204 on Success. <br>
 
 - POST **/api/users**
 
