@@ -4,11 +4,18 @@ import models, datetime
 from flask_httpauth import HTTPBasicAuth
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import cross_origin
+import subprocess
 # extensions
 auth = HTTPBasicAuth()
 
-def balls():
-    return "balls"
+@app.route("/api/scrape", methods=['POST'])
+@cross_origin()
+@auth.login_required
+def scrape():
+    if (not subprocess.call(["./fromScraper.py", "scraped.json"])):
+        return 'success'
+    return 'ah fuck, something went wrong', 500
+
 
 def getProductEntries(product): 
     entry_list = []
