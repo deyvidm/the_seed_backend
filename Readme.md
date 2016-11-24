@@ -74,7 +74,7 @@ Please be sure to update the Readme and tests! <br>
 		      "food_name": "different product name", 
 		      "location_id": 1, 
 		      "location_name": "name of store", 
-		      "price": price
+		      "price": 2.99
 		    }
 		]
 	}
@@ -87,18 +87,16 @@ Please be sure to update the Readme and tests! <br>
 	Return 200 on Success and the following body: <br>
 	
 	```JSON
-	{
-		[
-		    {
-		      "date": "date and time scraped", 
-		      "food_id": 0, 
-		      "food_name": "product name", 
-		      "location_id": 1, 
-		      "location_name": "name of store", 
-		      "price": 1.99
-		    }
-		]
-	}
+	[
+	    {
+	      "date": "date and time scraped", 
+	      "food_id": 0, 
+	      "food_name": "product name", 
+	      "location_id": 1, 
+	      "location_name": "name of store", 
+	      "price": 1.99
+	    }
+	]
 	```
 
 - POST **/api/scrape**
