@@ -96,8 +96,8 @@ def get_user(id):
 @cross_origin()
 @auth.login_required
 def get_auth_token():
-	token = g.user.generate_auth_token(600)
-	return jsonify({'token': token.decode('ascii'), 'duration': 600})
+	token = g.user.generate_auth_token(2400)
+	return jsonify({'token': token.decode('ascii'), 'duration': 2400})
 
 @app.route('/api/resource')
 @cross_origin()
