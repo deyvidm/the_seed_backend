@@ -27,7 +27,7 @@ def all_products():
         
         #don't store/return an empty object
         if entry_list: 
-            product_info[p.name] = [entry_list] 
+            product_info[p.name] = entry_list
     
     #the std lib's jsonify method will not JSONIFY a decimal.DECIMAL object 
     #the package 'simplejson' however DOES infact jsonify a decimal 
