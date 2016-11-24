@@ -39,44 +39,44 @@ Please be sure to update the Readme and tests! <br>
 	Returns 500 on Failure. <br>
 	Returns 200 on Sucess and the following body: <br> 
 	
-	```
+	```JSON
 	{
-		"product_name": [
+		"product name": [
 		    {
 		      "date": "date and time scraped", 
-		      "food_id": product_id, 
+		      "food_id": 1, 
 		      "food_name": "product_name", 
-		      "location_id": store_id, 
+		      "location_id": 1, 
 		      "location_name": "name of store", 
 		      "price": price
 		    }, 
 		    {
 		      "date": "date and time scraped", 
-		      "food_id": product_id, 
-		      "food_name": "product_name", 
-		      "location_id": store_id, 
-		      "location_name": "name of store", 
+		      "food_id": 1, 
+		      "food_name": "product name", 
+		      "location_id": 2, 
+		      "location_name": "name of second store", 
 		      "price": price
 		    }, 
 		    {
 		      "date": "date and time scraped", 
-		      "food_id": product_id, 
-		      "food_name": "product_name", 
-		      "location_id": store_id, 
-		      "location_name": "name of store", 
+		      "food_id": 1 
+		      "food_name": "product name", 
+		      "location_id": 3, 
+		      "location_name": "name of third store", 
 		      "price": price
 		    }
-		  ],
-		"different_product_name": [
+		],
+		"different product name": [
 		    {
 		      "date": "date and time scraped", 
-		      "food_id": product_id, 
-		      "food_name": "product_name", 
-		      "location_id": store_id, 
+		      "food_id": 2 
+		      "food_name": "different product name", 
+		      "location_id": 1, 
 		      "location_name": "name of store", 
 		      "price": price
 		    }
-		  ]
+		]
 	}
 	```
 
@@ -85,25 +85,26 @@ Please be sure to update the Readme and tests! <br>
 	Will receive a JSON string of all the entries for a product with id product_id from all time. <br>
 	Returns 204 on Failure. <br>
 	Return 200 on Success and the following body: <br>
-	```
+	
+	```JSON
 	{
 		[
 		    {
 		      "date": "date and time scraped", 
-		      "food_id": product_id, 
-		      "food_name": "product_name", 
-		      "location_id": store_id, 
+		      "food_id": 0, 
+		      "food_name": "product name", 
+		      "location_id": 1, 
 		      "location_name": "name of store", 
 		      "price": price
 		    }
-		  ]
+		]
 	}
 	```
 
 - POST **/api/scrape**
 
 	Manually activate the scraper and fetch new data. <br> 
-	User must be logged in to succeed. 
+	User must be logged in to succeed. <br>
 	Returns 500 on Failure. <br> 
 	Returns 204 on Success. <br>
 
@@ -124,9 +125,11 @@ Please be sure to update the Readme and tests! <br>
 	Server: Werkzeug/0.11.11 Python/2.7.10 <br>
 	Date: Wed, 23 Nov 2016 20:27:55 GMT <br>
 
-	{ <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;"username": "mark" <br>
+	```JSON
+	{ 
+   		"username": "mark"
 	}
+	```
 
 - GET **/api/users/&lt;int:id&gt;**
 
@@ -151,10 +154,12 @@ Please be sure to update the Readme and tests! <br>
 	Server: Werkzeug/0.11.11 Python/2.7.10 <br>
 	Date: Wed, 23 Nov 2016 20:49:33 GMT <br>
 
-	{ <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;"duration": 600, <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;"token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ3OTkzNDc3MywiaWF0IjoxNDc5OTM0MTczfQ.eyJpZCI6MX0.GmrfOOPkXgY5q0V6ykTONa-UPPBF8g4LDSMnfFI4ub8" <br>
+	```JSON
+	{ 
+		"duration": 600,
+		"token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ3OTkzNDc3MywiaWF0IjoxNDc5OTM0MTczfQ.eyJpZCI6MX0.GmrfOOPkXgY5q0V6ykTONa-UPPBF8g4LDSMnfFI4ub8" 
 	}
+	```
 
 	**This returns a token that can be used in place of sending `username` and `password` with each request** <br>
 
@@ -175,9 +180,11 @@ Please be sure to update the Readme and tests! <br>
 	Server: Werkzeug/0.11.11 Python/2.7.10 <br>
 	Date: Wed, 23 Nov 2016 20:47:52 GMT <br>
 
-	{ <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;"data": "Hello, mark!" <br>
+	```JSON
+	{ 
+		"data": "Hello, mark!"
 	}
+	```
 
 	```$ curl -u mark:idontlovemark -i -X GET http://127.0.0.1:5000/api/resource``` <br>
 
