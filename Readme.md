@@ -37,7 +37,7 @@ Please be sure to update the Readme and tests! <br>
 	Will receive a JSON string of all the results from the scraper from all time. 
 	Structure will be as follows:
 	
-	```JSON 
+	```
 	{
 		"product_name": [
 		    {
@@ -56,7 +56,7 @@ Please be sure to update the Readme and tests! <br>
 	Will receive a JSON string of all the entries for a product with id product_id from all time.
 	Structure will be as follows:
 	
-	```JSON 
+	```
 	{
 		[
 		    {
