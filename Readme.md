@@ -18,20 +18,58 @@ flask/bin/pip install -r dependencies.txt
 
 #Tutorial
 
-https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world<br>
 
-We will be using this tutorial to grind our way through flask. 
-You can skip the Templating and Web Forms, but be VERY sure to read the Database. 
+We will be using this tutorial to grind our way through flask. <br>
+You can skip the Templating and Web Forms, but be VERY sure to read the Database. <br>
 
-We are using SQLAlchemy, which is a really awesome Object wrapper. 
-Instead of making you work with raw SQL calls, SQLAlchemy works with classes
-which represent our tables. 
+We are using SQLAlchemy, which is a really awesome Object wrapper. <br>
+Instead of making you work with raw SQL calls, SQLAlchemy works with classes<br>
+which represent our tables. <br>
 
-###`src/api.py`
+###`src/api.py`<br>
 
-This is where all the endpoints live for now. As our API expands, we will 
-need to create new files. 
-Please be sure to update the Readme and tests! 
+This is where all the endpoints live for now. As our API expands, we will <br>
+need to create new files. <br>
+Please be sure to update the Readme and tests! <br>
+
+- GET **/api/product**
+	Will receive a JSON string of all the results from the scraper from all time. 
+	Structure will be as follows:
+	
+	```JSON 
+	{
+		"product_name": [
+		    {
+		      "date": "date and time scraped", 
+		      "food_id": product_id, 
+		      "food_name": "product_name", 
+		      "location_id": store_id, 
+		      "location_name": "name of store", 
+		      "price": price
+		    }
+		  ]
+	}
+	```
+
+- GET **/api/product/product_id**
+	Will receive a JSON string of all the entries for a product with id product_id from all time.
+	Structure will be as follows:
+	
+	```JSON 
+	{
+		[
+		    {
+		      "date": "date and time scraped", 
+		      "food_id": product_id, 
+		      "food_name": "product_name", 
+		      "location_id": store_id, 
+		      "location_name": "name of store", 
+		      "price": price
+		    }
+		  ]
+	}
+	```
 
 - POST **/api/users**
 
