@@ -45,10 +45,10 @@ Please be sure to update the Readme and tests! <br>
 		    {
 		      "date": "date and time scraped", 
 		      "food_id": 1, 
-		      "food_name": "product_name", 
+		      "food_name": "product name", 
 		      "location_id": 1, 
 		      "location_name": "name of store", 
-		      "price": price
+		      "price": 2.98
 		    }, 
 		    {
 		      "date": "date and time scraped", 
@@ -56,21 +56,21 @@ Please be sure to update the Readme and tests! <br>
 		      "food_name": "product name", 
 		      "location_id": 2, 
 		      "location_name": "name of second store", 
-		      "price": price
+		      "price": 2.78
 		    }, 
 		    {
 		      "date": "date and time scraped", 
-		      "food_id": 1 
+		      "food_id": 1,
 		      "food_name": "product name", 
 		      "location_id": 3, 
 		      "location_name": "name of third store", 
-		      "price": price
+		      "price": 2.88
 		    }
 		],
 		"different product name": [
 		    {
 		      "date": "date and time scraped", 
-		      "food_id": 2 
+		      "food_id": 2,
 		      "food_name": "different product name", 
 		      "location_id": 1, 
 		      "location_name": "name of store", 
@@ -95,7 +95,7 @@ Please be sure to update the Readme and tests! <br>
 		      "food_name": "product name", 
 		      "location_id": 1, 
 		      "location_name": "name of store", 
-		      "price": price
+		      "price": 1.99
 		    }
 		]
 	}
