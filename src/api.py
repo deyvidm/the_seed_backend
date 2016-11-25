@@ -10,7 +10,7 @@ auth = HTTPBasicAuth()
 
 @app.route("/api/scrape", methods=['POST'])
 @cross_origin()
-#@auth.login_required
+@auth.login_required
 def scrape():
     #this is a fucking mess 
     #the scraping script spits out the file at the root directory
