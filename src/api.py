@@ -12,8 +12,9 @@ auth = HTTPBasicAuth()
 @cross_origin()
 @auth.login_required
 def scrape():
-    if (not subprocess.call(["./fromScraper.py", "scraped.json"])):
-        return 'success'
+    if (not subprocess.call(["python", "turtleScrapes/WebsiteScraper.py"])):
+        if (not subprocess.call(["./fromScraper.py", "turtleScrapes/scraped.json"])):
+            return 'success'
     return 'ah fuck, something went wrong', 500
 
 
