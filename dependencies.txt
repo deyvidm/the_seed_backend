@@ -8,5 +8,3 @@ passlib
 itsdangerous
 lxml
 requests 
-re
-json

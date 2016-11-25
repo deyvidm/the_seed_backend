@@ -11,7 +11,6 @@ def scraperToDB(scraper_JSON):
     for loc, products in obj.iteritems():
         loc = loc.lower()
         for prod, cost in products.iteritems():
-            print prod, cost
             prod = prod.lower()
             #try to get a product ID 
             #if the product is not in the database, add it and then get its id
