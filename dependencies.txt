@@ -6,3 +6,7 @@ sqlalchemy-migrate
 simplejson
 passlib
 itsdangerous
+lxml
+requests 
+re
+json
