@@ -14,9 +14,9 @@ auth = HTTPBasicAuth()
 def scrape():
     #this is a fucking mess 
     #the scraping script spits out the file at the root directory
-    if (not subprocess.call(["python", "turtleScrapes/WebsiteScraper.py"])):
-        if (not subprocess.call(["./fromScraper.py", "./scraped.json"])):
-            return 'success'
+    subprocess.call(["python", "turtleScrapes/WebsiteScraper.py"])
+    if (not subprocess.call(["./fromScraper.py", "./scraped.json"])):
+        return 'success'
     return 'ah fuck, something went wrong', 500
 
 
